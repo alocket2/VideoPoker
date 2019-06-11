@@ -8,16 +8,8 @@
 
 import Foundation
 
-enum CardState {
-    case keep
-    case discard
-    case deck
-}
-
 enum CardRank: Int {
-    case two = 2
-    case three, four, five, six, seven, eight, nine, ten
-    case jack, queen, king, ace
+    case two = 2, three, four, five, six, seven, eight, nine, jack, queen, king, ace
     
     func description() -> String {
         switch self {
@@ -46,5 +38,4 @@ enum CardSuit: String {
 struct Card {
     var rank: CardRank
     var suit: CardSuit
-    var state: CardState
 }
