@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DeckProtocol: class {
-    func shuffle(deck: Deck) -> Deck
-    func deal()
+protocol Dealer: class {
+    func shuffle(deck: inout Deck) -> Deck
+    func deal() -> Deck?
 }

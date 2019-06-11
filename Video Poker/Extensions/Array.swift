@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Returns an array of shuffled cards
 extension Array where Element == Card {
 
     mutating func shuffle() -> Deck {
