@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let manager = DeckManager.shared
+        guard let deck = manager.generate() else { return }
+        
+        for card in deck {
+            print(card)
+        }
     }
-
-
 }
 

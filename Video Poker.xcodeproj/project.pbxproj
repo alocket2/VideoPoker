@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		656D11FC22AF12E70081294D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11FB22AF12E70081294D /* AppDelegate.swift */; };
-		656D11FE22AF12E70081294D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11FD22AF12E70081294D /* ViewController.swift */; };
-		656D120122AF12E70081294D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656D11FF22AF12E70081294D /* Main.storyboard */; };
+		656D11FE22AF12E70081294D /* DealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11FD22AF12E70081294D /* DealViewController.swift */; };
 		656D120322AF12E80081294D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656D120222AF12E80081294D /* Assets.xcassets */; };
 		656D120622AF12E80081294D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656D120422AF12E80081294D /* LaunchScreen.storyboard */; };
 		656D121122AF12E90081294D /* Video_PokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D121022AF12E90081294D /* Video_PokerTests.swift */; };
+		656D122122AF16380081294D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122022AF16380081294D /* Card.swift */; };
+		656D122322AF17B10081294D /* DeckProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122222AF17B10081294D /* DeckProtocol.swift */; };
+		656D122522AF18440081294D /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122422AF18440081294D /* Deck.swift */; };
+		656D122922AF19CE0081294D /* DeckUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122822AF19CE0081294D /* DeckUseCaseImpl.swift */; };
+		656D122C22AF1D720081294D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122B22AF1D720081294D /* Array.swift */; };
+		656D123022AF25280081294D /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122F22AF25280081294D /* DeckManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +33,19 @@
 /* Begin PBXFileReference section */
 		656D11F822AF12E70081294D /* Video Poker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Poker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D11FB22AF12E70081294D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		656D11FD22AF12E70081294D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		656D120022AF12E70081294D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		656D11FD22AF12E70081294D /* DealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealViewController.swift; sourceTree = "<group>"; };
 		656D120222AF12E80081294D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656D120522AF12E80081294D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		656D120722AF12E80081294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		656D120C22AF12E90081294D /* Video PokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video PokerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D121022AF12E90081294D /* Video_PokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_PokerTests.swift; sourceTree = "<group>"; };
 		656D121222AF12E90081294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		656D122022AF16380081294D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		656D122222AF17B10081294D /* DeckProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckProtocol.swift; sourceTree = "<group>"; };
+		656D122422AF18440081294D /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		656D122822AF19CE0081294D /* DeckUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckUseCaseImpl.swift; sourceTree = "<group>"; };
+		656D122B22AF1D720081294D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		656D122F22AF25280081294D /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +87,12 @@
 		656D11FA22AF12E70081294D /* Video Poker */ = {
 			isa = PBXGroup;
 			children = (
-				656D11FB22AF12E70081294D /* AppDelegate.swift */,
-				656D11FD22AF12E70081294D /* ViewController.swift */,
-				656D11FF22AF12E70081294D /* Main.storyboard */,
-				656D120222AF12E80081294D /* Assets.xcassets */,
-				656D120422AF12E80081294D /* LaunchScreen.storyboard */,
-				656D120722AF12E80081294D /* Info.plist */,
+				656D122D22AF250E0081294D /* Managers */,
+				656D122A22AF1D680081294D /* Extensions */,
+				656D121F22AF162B0081294D /* Models */,
+				656D121E22AF161C0081294D /* UseCases */,
+				656D121B22AF13070081294D /* Resources */,
+				656D11FD22AF12E70081294D /* DealViewController.swift */,
 			);
 			path = "Video Poker";
 			sourceTree = "<group>";
@@ -94,6 +104,67 @@
 				656D121222AF12E90081294D /* Info.plist */,
 			);
 			path = "Video PokerTests";
+			sourceTree = "<group>";
+		};
+		656D121B22AF13070081294D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				656D11FB22AF12E70081294D /* AppDelegate.swift */,
+				656D120422AF12E80081294D /* LaunchScreen.storyboard */,
+				656D120722AF12E80081294D /* Info.plist */,
+				656D120222AF12E80081294D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		656D121E22AF161C0081294D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				656D122722AF19BC0081294D /* Implmentation */,
+				656D122622AF19B30081294D /* Protocols */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		656D121F22AF162B0081294D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				656D122022AF16380081294D /* Card.swift */,
+				656D122422AF18440081294D /* Deck.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		656D122622AF19B30081294D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				656D122222AF17B10081294D /* DeckProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		656D122722AF19BC0081294D /* Implmentation */ = {
+			isa = PBXGroup;
+			children = (
+				656D122822AF19CE0081294D /* DeckUseCaseImpl.swift */,
+			);
+			path = Implmentation;
+			sourceTree = "<group>";
+		};
+		656D122A22AF1D680081294D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				656D122B22AF1D720081294D /* Array.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		656D122D22AF250E0081294D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				656D122F22AF25280081294D /* DeckManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +250,6 @@
 			files = (
 				656D120622AF12E80081294D /* LaunchScreen.storyboard in Resources */,
 				656D120322AF12E80081294D /* Assets.xcassets in Resources */,
-				656D120122AF12E70081294D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656D11FE22AF12E70081294D /* ViewController.swift in Sources */,
+				656D11FE22AF12E70081294D /* DealViewController.swift in Sources */,
+				656D122122AF16380081294D /* Card.swift in Sources */,
+				656D122C22AF1D720081294D /* Array.swift in Sources */,
+				656D122922AF19CE0081294D /* DeckUseCaseImpl.swift in Sources */,
+				656D122522AF18440081294D /* Deck.swift in Sources */,
+				656D122322AF17B10081294D /* DeckProtocol.swift in Sources */,
+				656D123022AF25280081294D /* DeckManager.swift in Sources */,
 				656D11FC22AF12E70081294D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		656D11FF22AF12E70081294D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				656D120022AF12E70081294D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		656D120422AF12E80081294D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +430,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73A87RLJ4N;
-				INFOPLIST_FILE = "Video Poker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Video Poker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73A87RLJ4N;
-				INFOPLIST_FILE = "Video Poker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Video Poker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
