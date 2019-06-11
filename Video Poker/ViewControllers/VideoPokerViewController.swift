@@ -76,12 +76,10 @@ extension VideoPokerViewController {
     }
 
     private func addCards() {
-        if cardStackView.subviews.count > 0 {
-            for subview in cardStackView.subviews {
-                cardStackView.removeArrangedSubview(subview)
+        if cardStackView.arrangedSubviews.count > 0 {
+            for subview in cardStackView.arrangedSubviews {
+                subview.removeFromSuperview()
             }
-            
-            view.layoutIfNeeded()
         }
         
         for (index, card) in presenter.currentHand.enumerated() {
@@ -103,10 +101,11 @@ extension VideoPokerViewController {
         let alertController = UIAlertController(title: "\(tappedCard.rank) of \(tappedCard.suit)", message: "What would you like to do?", preferredStyle: .actionSheet)
         let keepAction = UIAlertAction(title: "Keep", style: .default) { (_) in
             self.presenter.heldCards.append(self.presenter.currentHand[cardView.tag])
-            self.presenter.currentHand.remove(at: cardView.tag)
             self.addGoButton()
         }
-        let discardAction = UIAlertAction(title: "Discard", style: .default, handler: nil)
+        let discardAction = UIAlertAction(title: "Discard", style: .default) { (_) in
+            self.presenter.discardedCards.append(self.presenter.currentHand[cardView.tag])
+        }
         alertController.addAction(keepAction)
         alertController.addAction(discardAction)
         present(alertController, animated: true, completion: nil)

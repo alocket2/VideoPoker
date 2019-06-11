@@ -38,11 +38,11 @@ extension DealerUserCaseImpl {
             for cardSuit in suits {
                 guard let rank = CardRank.init(rawValue: count),
                     let suit = CardSuit.init(rawValue: cardSuit.rawValue) else { return nil }
-                let card = Card(rank: rank, suit: suit, state: .deck)
+                let card = Card(rank: rank, suit: suit)
                 cards.append(card)
             }
         }
-        
+
         return cards.shuffle()
     }
 }

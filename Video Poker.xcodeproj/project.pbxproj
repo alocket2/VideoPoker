@@ -18,7 +18,6 @@
 		656D122C22AF1D720081294D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122B22AF1D720081294D /* Array.swift */; };
 		656D123222AF33450081294D /* PokerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D123122AF33450081294D /* PokerPresenterTests.swift */; };
 		656D123722AF37B40081294D /* PokerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D123622AF37B40081294D /* PokerPresenter.swift */; };
-		656D123C22AF5EEA0081294D /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D123B22AF5EEA0081294D /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		656D122B22AF1D720081294D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		656D123122AF33450081294D /* PokerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPresenterTests.swift; sourceTree = "<group>"; };
 		656D123622AF37B40081294D /* PokerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPresenter.swift; sourceTree = "<group>"; };
-		656D123B22AF5EEA0081294D /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				656D122B22AF1D720081294D /* Array.swift */,
-				656D123B22AF5EEA0081294D /* UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				656D11FE22AF12E70081294D /* VideoPokerViewController.swift in Sources */,
-				656D123C22AF5EEA0081294D /* UIStackView.swift in Sources */,
 				656D122122AF16380081294D /* Card.swift in Sources */,
 				656D122C22AF1D720081294D /* Array.swift in Sources */,
 				656D122922AF19CE0081294D /* DealerUseCaseImpl.swift in Sources */,
