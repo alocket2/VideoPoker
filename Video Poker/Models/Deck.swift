@@ -9,7 +9,3 @@
 import Foundation
 
 typealias Deck = [Card]
-
-extension Deck {
-   
-}
