@@ -75,9 +75,10 @@ extension VideoPokerViewController {
     }
 
     private func addCards() {
-        for _ in currentHand {
-            let cardView = UIView()
-            cardView.backgroundColor = .darkGray
+        for card in currentHand {
+            let cardView = UIImageView()
+            cardView.image = UIImage(named: "\(card.rank)_\(card.suit)")
+            cardView.backgroundColor = .white
             cardStackView.addArrangedSubview(cardView)
         }
     }
