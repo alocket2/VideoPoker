@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		656D11FC22AF12E70081294D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11FB22AF12E70081294D /* AppDelegate.swift */; };
-		656D11FE22AF12E70081294D /* DealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11FD22AF12E70081294D /* DealViewController.swift */; };
+		656D11FE22AF12E70081294D /* VideoPokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11FD22AF12E70081294D /* VideoPokerViewController.swift */; };
 		656D120322AF12E80081294D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656D120222AF12E80081294D /* Assets.xcassets */; };
 		656D120622AF12E80081294D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656D120422AF12E80081294D /* LaunchScreen.storyboard */; };
 		656D122122AF16380081294D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122022AF16380081294D /* Card.swift */; };
@@ -18,6 +18,7 @@
 		656D122C22AF1D720081294D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D122B22AF1D720081294D /* Array.swift */; };
 		656D123222AF33450081294D /* PokerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D123122AF33450081294D /* PokerPresenterTests.swift */; };
 		656D123722AF37B40081294D /* PokerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D123622AF37B40081294D /* PokerPresenter.swift */; };
+		656D123C22AF5EEA0081294D /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D123B22AF5EEA0081294D /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +34,7 @@
 /* Begin PBXFileReference section */
 		656D11F822AF12E70081294D /* Video Poker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Poker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D11FB22AF12E70081294D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		656D11FD22AF12E70081294D /* DealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealViewController.swift; sourceTree = "<group>"; };
+		656D11FD22AF12E70081294D /* VideoPokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPokerViewController.swift; sourceTree = "<group>"; };
 		656D120222AF12E80081294D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656D120522AF12E80081294D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		656D120722AF12E80081294D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		656D122B22AF1D720081294D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		656D123122AF33450081294D /* PokerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPresenterTests.swift; sourceTree = "<group>"; };
 		656D123622AF37B40081294D /* PokerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPresenter.swift; sourceTree = "<group>"; };
+		656D123B22AF5EEA0081294D /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +89,12 @@
 		656D11FA22AF12E70081294D /* Video Poker */ = {
 			isa = PBXGroup;
 			children = (
+				656D123822AF3CFD0081294D /* ViewControllers */,
 				656D123522AF37A40081294D /* Presenters */,
 				656D122A22AF1D680081294D /* Extensions */,
 				656D121F22AF162B0081294D /* Models */,
 				656D121E22AF161C0081294D /* UseCases */,
 				656D121B22AF13070081294D /* Resources */,
-				656D11FD22AF12E70081294D /* DealViewController.swift */,
 			);
 			path = "Video Poker";
 			sourceTree = "<group>";
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				656D122B22AF1D720081294D /* Array.swift */,
+				656D123B22AF5EEA0081294D /* UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +168,14 @@
 				656D123622AF37B40081294D /* PokerPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		656D123822AF3CFD0081294D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				656D11FD22AF12E70081294D /* VideoPokerViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656D11FE22AF12E70081294D /* DealViewController.swift in Sources */,
+				656D11FE22AF12E70081294D /* VideoPokerViewController.swift in Sources */,
+				656D123C22AF5EEA0081294D /* UIStackView.swift in Sources */,
 				656D122122AF16380081294D /* Card.swift in Sources */,
 				656D122C22AF1D720081294D /* Array.swift in Sources */,
 				656D122922AF19CE0081294D /* DealerUseCaseImpl.swift in Sources */,
