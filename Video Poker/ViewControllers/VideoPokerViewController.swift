@@ -15,7 +15,6 @@ class VideoPokerViewController: UIViewController {
     
     var dealerButton: UIButton!
     var cardStackView = UIStackView()
-    var heldCards: Deck = []
     
     init(presenter: PokerPresenter = PokerPresenter()) {
         self.presenter = presenter
@@ -30,10 +29,6 @@ class VideoPokerViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 223/255, green: 230/255, blue: 233/255, alpha: 1)
         setupUI()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
 }
 
@@ -76,10 +71,9 @@ extension VideoPokerViewController {
     }
 
     private func addCards() {
-        if cardStackView.arrangedSubviews.count > 0 {
-            for subview in cardStackView.arrangedSubviews {
-                subview.removeFromSuperview()
-            }
+
+        for subview in cardStackView.arrangedSubviews {
+            subview.removeFromSuperview()
         }
         
         for (index, card) in presenter.currentHand.enumerated() {
@@ -94,36 +88,37 @@ extension VideoPokerViewController {
             cardStackView.addArrangedSubview(cardView)
         }
     }
-    
-    @objc private func didTapPlayingCard(_ sender: UITapGestureRecognizer) {
-        guard let cardView = sender.view else { return }
-        let tappedCard = presenter.currentHand[cardView.tag]
-        let alertController = UIAlertController(title: "\(tappedCard.rank) of \(tappedCard.suit)", message: "What would you like to do?", preferredStyle: .actionSheet)
-        let keepAction = UIAlertAction(title: "Keep", style: .default) { (_) in
-            self.presenter.heldCards.append(self.presenter.currentHand[cardView.tag])
-            self.addGoButton()
-        }
-        let discardAction = UIAlertAction(title: "Discard", style: .default) { (_) in
-            self.presenter.discardedCards.append(self.presenter.currentHand[cardView.tag])
-        }
-        alertController.addAction(keepAction)
-        alertController.addAction(discardAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    private func addGoButton() {
+
+    private func changeToGoButton() {
         dealerButton.setTitle("Go", for: .normal)
         dealerButton.isHidden = false
         dealerButton.tag = 2
     }
-    
+
+    /*
+     Once the user has discard and redrawn cards one time we should not allow them to
+     keep doing this, since it is against the rules.
+    */
     private func removeTapGestures() {
-        for subview in cardStackView.subviews {
+        for subview in cardStackView.arrangedSubviews {
             guard let recognizers = subview.gestureRecognizers else { return }
             for recognizer in recognizers {
                 subview.removeGestureRecognizer(recognizer)
             }
         }
+    }
+    
+    private func checkScore() {
+        let score = presenter.score()
+        let alertController = UIAlertController(title: "Game Result", message: "\(score)", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default) { (_) in
+            self.dealerButton.setTitle("Deal Cards", for: .normal)
+            self.dealerButton.isHidden = false
+            self.dealerButton.tag = 1
+        }
+        
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
     }
 
 }
@@ -133,16 +128,36 @@ extension VideoPokerViewController {
     @objc private func dealerButtonWasTapped(_ sender: UIButton) {
         switch sender.tag {
             case 1:
+                presenter.resetGame()
                 presenter.currentHand = presenter.deal()
                 addCards()
                 dealerButton.isHidden = true
             case 2:
                 presenter.discardAndGetNewCards()
-                removeTapGestures()
                 addCards()
+                removeTapGestures()
                 dealerButton.isHidden = true
+                checkScore()
             default:
                 return
         }
     }
+
+    @objc private func didTapPlayingCard(_ sender: UITapGestureRecognizer) {
+        guard let cardView = sender.view else { return }
+        let tappedCard = presenter.currentHand[cardView.tag]
+        let alertController = UIAlertController(title: "\(tappedCard.rank) of \(tappedCard.suit)", message: "What would you like to do?", preferredStyle: .actionSheet)
+        let keepAction = UIAlertAction(title: "Keep", style: .default) { (_) in
+            self.presenter.heldCards.append(self.presenter.currentHand[cardView.tag])
+            self.changeToGoButton()
+        }
+        let discardAction = UIAlertAction(title: "Discard", style: .default) { (_) in
+            self.presenter.discardedCards.append(self.presenter.currentHand[cardView.tag])
+            self.changeToGoButton()
+        }
+        alertController.addAction(keepAction)
+        alertController.addAction(discardAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
 }

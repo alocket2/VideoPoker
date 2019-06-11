@@ -21,4 +21,14 @@ extension Array where Element == Card {
         
         return shuffledDeck
     }
+    
+    func sort() -> Deck {
+        let sortedDeck = self.sorted {
+            let rankOne = $0.rank.rawValue
+            let rankTwo = $1.rank.rawValue
+            return rankOne < rankTwo
+        }
+
+        return sortedDeck
+    }
 }

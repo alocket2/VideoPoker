@@ -10,10 +10,12 @@ import Foundation
 
 final class DealerUserCaseImpl: Dealer {
 
+    // Shuffles a deck of cards
     func shuffle(deck: inout Deck) -> Deck {
         return deck.shuffle()
     }
 
+    // Returns a random set of generated cards
     func deal() -> Deck? {
         guard let deck = generate() else { return nil }
         return deck
