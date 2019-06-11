@@ -16,8 +16,17 @@ final class PokerPresenter {
         self.dealer = dealer
     }
     
-    func deck() -> Deck {
+    func deal() -> Deck {
+        return getTopFive()
+    }
+    
+    private func getTopFive() -> Deck {
         guard let deck = dealer.deal() else { return  Deck() }
-        return deck
+        var hand: [Card] = []
+        for card in 0..<5 {
+            hand.append(deck[card])
+        }
+        
+        return hand
     }
 }
