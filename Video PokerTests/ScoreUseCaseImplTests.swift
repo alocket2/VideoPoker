@@ -10,25 +10,70 @@ import XCTest
 @testable import Video_Poker
 
 class ScoreUseCaseImplTests: XCTestCase {
+    
+    func testTally() {
+        let expectedStraightScore = 500
+        let expectedDoubleScore = 100
+        var score: Int = 0
+        
+        let straightHand = MockHand.straight.sort()
+        let isStraight = checkForStraight(hand: straightHand)
+        
+        let doubleHand = MockHand.double.sort()
+        let isDouble = checkForDouble(hand: doubleHand)
+        
+        if isStraight {
+            score = 500
+            XCTAssertEqual(score, expectedStraightScore)
+        } else if isDouble {
+            score = 100
+            XCTAssertEqual(score, expectedDoubleScore)
+        }
+    }
 
     func testCheckForStraight() {
         let expected = true
+        let straightHand = MockHand.straight.sort()
+        let isStraight = checkForStraight(hand: straightHand)
 
-        var isStraight: Bool = false
-        let straightHand = MockDecks.straightDeck
-        var sorted = straightHand.sort()
-        for index in 0..<sorted.count {
-            if index != sorted.count - 1 {
-                if sorted[index + 1].rank.rawValue - sorted[index].rank.rawValue == 1 {
+        XCTAssertEqual(isStraight, expected)
+    }
+    
+    func testForDouble() {
+        let expected = true
+        let doubleHand = MockHand.double.sort()
+        let isDouble = checkForDouble(hand: doubleHand)
+    
+        XCTAssertEqual(isDouble, expected)
+    }
+}
+
+extension ScoreUseCaseImplTests {
+    private func checkForStraight(hand: Deck) -> Bool {
+        for index in 0..<hand.count {
+            if index != hand.count - 1 {
+                if hand[index + 1].rank.rawValue - hand[index].rank.rawValue == 1 {
                     continue
                 } else {
-                    isStraight = false
+                    return false
                 }
             }
         }
-
-        isStraight = true
-
-        XCTAssertEqual(isStraight, expected)
+        
+        return true
+    }
+    
+    private func checkForDouble(hand: Deck) -> Bool {
+        for index in 0..<hand.count {
+            if index != hand.count - 1 {
+                if hand[index + 1].rank.rawValue == hand[index].rank.rawValue {
+                    return true
+                } else {
+                    continue
+                }
+            }
+        }
+        
+        return false
     }
 }

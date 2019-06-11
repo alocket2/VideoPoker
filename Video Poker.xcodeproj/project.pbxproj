@@ -22,7 +22,7 @@
 		B965694622B0242D00DE3E67 /* ScoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965694522B0242D00DE3E67 /* ScoreUseCase.swift */; };
 		B965694822B0245C00DE3E67 /* ScoreUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965694722B0245C00DE3E67 /* ScoreUseCaseImpl.swift */; };
 		B965694A22B02E7C00DE3E67 /* ScoreUseCaseImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965694922B02E7C00DE3E67 /* ScoreUseCaseImplTests.swift */; };
-		B965694D22B02FA200DE3E67 /* MockDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965694C22B02FA200DE3E67 /* MockDecks.swift */; };
+		B965694D22B02FA200DE3E67 /* MockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965694C22B02FA200DE3E67 /* MockHand.swift */; };
 		B965694F22B0314400DE3E67 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965694E22B0314400DE3E67 /* Array.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		B965694522B0242D00DE3E67 /* ScoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreUseCase.swift; sourceTree = "<group>"; };
 		B965694722B0245C00DE3E67 /* ScoreUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreUseCaseImpl.swift; sourceTree = "<group>"; };
 		B965694922B02E7C00DE3E67 /* ScoreUseCaseImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreUseCaseImplTests.swift; sourceTree = "<group>"; };
-		B965694C22B02FA200DE3E67 /* MockDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDecks.swift; sourceTree = "<group>"; };
+		B965694C22B02FA200DE3E67 /* MockHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHand.swift; sourceTree = "<group>"; };
 		B965694E22B0314400DE3E67 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +196,7 @@
 		B965694B22B02F9600DE3E67 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				B965694C22B02FA200DE3E67 /* MockDecks.swift */,
+				B965694C22B02FA200DE3E67 /* MockHand.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				B965694A22B02E7C00DE3E67 /* ScoreUseCaseImplTests.swift in Sources */,
 				B965694F22B0314400DE3E67 /* Array.swift in Sources */,
 				656D123222AF33450081294D /* PokerPresenterTests.swift in Sources */,
-				B965694D22B02FA200DE3E67 /* MockDecks.swift in Sources */,
+				B965694D22B02FA200DE3E67 /* MockHand.swift in Sources */,
 				B965694422B0221C00DE3E67 /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
