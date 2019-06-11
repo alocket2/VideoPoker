@@ -9,10 +9,15 @@
 import Foundation
 @testable import Video_Poker
 
-class MockDecks {
-   static let straightDeck = [Card(rank: .nine, suit: .club),
+class MockHand {
+   static let straight = [Card(rank: .nine, suit: .club),
                               Card(rank: .queen, suit: .diamond),
                               Card(rank: .ace, suit: .spade),
                               Card(rank: .jack, suit: .diamond),
                               Card(rank: .king, suit: .spade)]
+    static let double = [Card(rank: .nine, suit: .club),
+                         Card(rank: .nine, suit: .diamond),
+                         Card(rank: .ace, suit: .spade),
+                         Card(rank: .jack, suit: .diamond),
+                         Card(rank: .king, suit: .spade)]
 }
