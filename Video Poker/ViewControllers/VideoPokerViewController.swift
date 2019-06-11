@@ -27,8 +27,25 @@ class VideoPokerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
         view.backgroundColor = UIColor(red: 223/255, green: 230/255, blue: 233/255, alpha: 1)
         setupUI()
+    }
+}
+
+extension VideoPokerViewController: GameDelegate {
+    func displaySelectAllError() {
+        let alertController = UIAlertController(title: "Error", message: "You must choose to keep or discard on every card", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default) { (_) in
+            self.changeToGoButton()
+        }
+        
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func shouldShowGoButton() {
+        changeToGoButton()
     }
 }
 
@@ -149,11 +166,19 @@ extension VideoPokerViewController {
         let alertController = UIAlertController(title: "\(tappedCard.rank) of \(tappedCard.suit)", message: "What would you like to do?", preferredStyle: .actionSheet)
         let keepAction = UIAlertAction(title: "Keep", style: .default) { (_) in
             self.presenter.heldCards.append(self.presenter.currentHand[cardView.tag])
-            self.changeToGoButton()
+            let subviews = self.cardStackView.arrangedSubviews
+            let currentSubView = subviews[cardView.tag]
+            currentSubView.layer.borderWidth = 3
+            currentSubView.layer.borderColor = UIColor.green.cgColor
+            self.presenter.shouldShowGoButton()
         }
         let discardAction = UIAlertAction(title: "Discard", style: .default) { (_) in
             self.presenter.discardedCards.append(self.presenter.currentHand[cardView.tag])
-            self.changeToGoButton()
+            let subviews = self.cardStackView.arrangedSubviews
+            let currentSubView = subviews[cardView.tag]
+            currentSubView.layer.borderWidth = 3
+            currentSubView.layer.borderColor = UIColor.red.cgColor
+            self.presenter.shouldShowGoButton()
         }
         alertController.addAction(keepAction)
         alertController.addAction(discardAction)

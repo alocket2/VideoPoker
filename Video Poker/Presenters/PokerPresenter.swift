@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol GameDelegate: class {
+    func displaySelectAllError()
+    func shouldShowGoButton()
+}
+
 final class PokerPresenter {
     
     //MARK: - Varibales
@@ -17,6 +22,10 @@ final class PokerPresenter {
     var currentHand: Deck = []
     var heldCards: Deck = []
     var discardedCards: Deck =  []
+    
+    weak var delegate: GameDelegate?
+    
+    let maxCardsInHand = 5
     
     init(dealer: Dealer = DealerUserCaseImpl(),
          scorer: Score = ScoreUseCaseImpl()) {
@@ -42,9 +51,17 @@ final class PokerPresenter {
      Empties the current hand and draws the same amount of cards as the discarded
     */
     func discardAndGetNewCards() {
-        if discardedCards.count > 0 {
+        if discardedCards.count > 0 && ((discardedCards.count + heldCards.count) == maxCardsInHand) {
             currentHand = []
             getNewCards(numCards: discardedCards.count)
+        } else {
+            delegate?.displaySelectAllError()
+        }
+    }
+    
+    func shouldShowGoButton() {
+        if discardedCards.count == maxCardsInHand || heldCards.count == maxCardsInHand || (discardedCards.count + heldCards.count) == maxCardsInHand {
+            delegate?.shouldShowGoButton()
         }
     }
     
