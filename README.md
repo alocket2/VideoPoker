@@ -33,4 +33,4 @@ Better understand a users hand (multiple doubles, royal flush etc.)
 
 Better game state management 
 
-UI improvements & animationa
+UI improvements & animation
