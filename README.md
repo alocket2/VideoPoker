@@ -18,5 +18,7 @@ Once the user presses Go, it will check if you have a any double or a straight
 # Points
 
 Straight - 500
+
 Double - 100
+
 None - 0
