@@ -1,4 +1,4 @@
-# VideoPoker
+# Video Poker
 
 Video Poker v1 build in Swift
 
@@ -22,3 +22,15 @@ Straight - 500
 Double - 100
 
 None - 0
+
+-----
+
+# To Do
+
+More robust unit testing
+
+Better understand a users hand (multiple doubles, royal flush etc.)
+
+Better game state management 
+
+UI improvements & animationa
